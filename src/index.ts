@@ -1,5 +1,6 @@
 import puppeteer from "puppeteer";
-import { randomizeItemList } from "./items";
+import { randomizeItemList, randomizeURL } from "./items";
+import { urlArray } from "./urls";
 
 (async () => {
   const browser = await puppeteer.launch({
@@ -19,10 +20,6 @@ import { randomizeItemList } from "./items";
   await page.goto(
     `https://www.kabum.com.br/busca?query=${randomizeItemList()}`
   );
-  const scrollBottom = page.waitForFunction(
-    "window.scrollTo(0, document.body.scrollHeight);"
-  );
-  await scrollBottom;
 
   await page.screenshot({ path: "example.png" });
 
