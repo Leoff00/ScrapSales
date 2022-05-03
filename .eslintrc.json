@@ -24,6 +24,8 @@
       { "allowTypedFunctionExpressions": true }
     ],
     "no-empty-character-class": "warn",
-    "func-style": "warn"
+    "func-style": "warn",
+    "camelcase": "error",
+    "valid-typeof": "error"
   }
 }
